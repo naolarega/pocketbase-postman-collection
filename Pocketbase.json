@@ -620,39 +620,148 @@
 			]
 		},
 		{
-			"name": "Get a file",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/api/files/:collectionId/:redcordId/:fileName",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"api",
-						"files",
-						":collectionId",
-						":redcordId",
-						":fileName"
-					],
-					"variable": [
+			"name": "files",
+			"item": [
+				{
+					"name": "Get a file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/files/:collectionId/:redcordId/:fileName",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"files",
+								":collectionId",
+								":redcordId",
+								":fileName"
+							],
+							"variable": [
+								{
+									"key": "collectionId",
+									"value": "string"
+								},
+								{
+									"key": "redcordId",
+									"value": "string"
+								},
+								{
+									"key": "fileName",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "settings",
+			"item": [
+				{
+					"name": "test",
+					"item": [
 						{
-							"key": "collectionId",
-							"value": "string"
+							"name": "Test s3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/settings/test/s3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"settings",
+										"test",
+										"s3"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "redcordId",
-							"value": "string"
-						},
-						{
-							"key": "fileName",
-							"value": "string"
+							"name": "Test email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"user@example.com\",\n    \"template\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/settings/test/email",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"settings",
+										"test",
+										"email"
+									]
+								}
+							},
+							"response": []
 						}
 					]
+				},
+				{
+					"name": "Get settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/settings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update settings",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/settings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"settings"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	],
 	"auth": {
