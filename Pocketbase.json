@@ -143,6 +143,31 @@
 					"name": "{id}",
 					"item": [
 						{
+							"name": "Get a collection",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/collections/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Update a collection",
 							"request": {
 								"method": "PATCH",
@@ -157,13 +182,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/api/collections",
+									"raw": "{{baseUrl}}/api/collections/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
-										"collections"
+										"collections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
 									]
 								}
 							},
@@ -197,6 +229,194 @@
 					]
 				},
 				{
+					"name": "{collectionIdOrName}",
+					"item": [
+						{
+							"name": "records",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Get a record",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/collections/:collectionIdOrName/records/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collections",
+														":collectionIdOrName",
+														"records",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "collectionIdOrName",
+															"value": "string"
+														},
+														{
+															"key": "id",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update a record",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"@collectionId\": \"string\",\n    \"@collectionName\": \"string\",\n    \"@expand\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/collections/:collectionIdOrName/records/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collections",
+														":collectionIdOrName",
+														"records",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "collectionIdOrName",
+															"value": "string"
+														},
+														{
+															"key": "id",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete a record",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/collections/:collectionIdOrName/records/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collections",
+														":collectionIdOrName",
+														"records",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "collectionIdOrName",
+															"value": "string"
+														},
+														{
+															"key": "id",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Get records",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/collections/:collectionIdOrName/records?page=1&perPage=100",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collections",
+												":collectionIdOrName",
+												"records"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "perPage",
+													"value": "100"
+												}
+											],
+											"variable": [
+												{
+													"key": "collectionIdOrName",
+													"value": "string"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create a record",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"@collectionId\": \"string\",\n    \"@collectionName\": \"string\",\n    \"@expand\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/collections/:id/records",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collections",
+												":id",
+												"records"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "string"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "Get collections",
 					"request": {
 						"method": "GET",
@@ -218,31 +438,6 @@
 								{
 									"key": "perPage",
 									"value": "100"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a collection",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/collections/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"collections",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "string"
 								}
 							]
 						}
@@ -404,19 +599,60 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/realtime",
+							"raw": "{{baseUrl}}/api/realtime?$autoCancel=false",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"realtime"
+							],
+							"query": [
+								{
+									"key": "$autoCancel",
+									"value": "false"
+								}
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Get a file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/files/:collectionId/:redcordId/:fileName",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"files",
+						":collectionId",
+						":redcordId",
+						":fileName"
+					],
+					"variable": [
+						{
+							"key": "collectionId",
+							"value": "string"
+						},
+						{
+							"key": "redcordId",
+							"value": "string"
+						},
+						{
+							"key": "fileName",
+							"value": "string"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
