@@ -1,0 +1,1 @@
+## Pocketbase postman collection
