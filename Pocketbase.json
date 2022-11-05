@@ -137,6 +137,176 @@
 			]
 		},
 		{
+			"name": "collections",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Update a collection",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"string\",\n    \"schema\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"type\": \"string\",\n            \"system\": false,\n            \"required\": false,\n            \"unique\": false,\n            \"options\": {  }\n        }\n    ],\n    \"system\": false,\n    \"listRule\": \"string\",\n    \"viewRule\": \"string\",\n    \"createRule\": \"string\",\n    \"updateRule\": \"string\",\n    \"deleteRule\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/collections",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"collections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a collection",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/collections/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get collections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/collections?page=1&perPage=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"collections"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a collection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/collections/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a collection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"string\",\n    \"schema\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"type\": \"string\",\n            \"system\": false,\n            \"required\": false,\n            \"unique\": false,\n            \"options\": {  }\n        }\n    ],\n    \"system\": false,\n    \"listRule\": \"string\",\n    \"viewRule\": \"string\",\n    \"createRule\": \"string\",\n    \"updateRule\": \"string\",\n    \"deleteRule\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/collections",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import a collection",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"collections\": [\n        {\n            \"name\": \"string\",\n            \"schema\": [\n                {\n                    \"id\": \"string\",\n                    \"name\": \"string\",\n                    \"type\": \"string\",\n                    \"system\": false,\n                    \"required\": false,\n                    \"unique\": false,\n                    \"options\": {  }\n                }\n            ],\n            \"system\": false,\n            \"listRule\": \"string\",\n            \"viewRule\": \"string\",\n            \"createRule\": \"string\",\n            \"updateRule\": \"string\",\n            \"deleteRule\": \"string\"\n        }\n    ],\n    \"deleteMissing\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/collections/import",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"import"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "realtime",
 			"item": [
 				{
